@@ -19,11 +19,6 @@ text-align:center;
 padding:20px;
 }
 
-h1{
-font-size:32px;
-margin-top:20px;
-}
-
 .photo{
 width:180px;
 height:180px;
@@ -81,6 +76,11 @@ Teri khushi meri jaan hai. 🌹
 Tu hi meri duniya, tu hi meri mohabbat hai. ❤️
 </div>
 
+<div class="shayari">
+💕 Har janam me bas tu meri hi rahe,  
+Ye meri rab se sabse pyaari dua hai. 💕
+</div>
+
 <button onclick="playSong()">🎵 Play Our Song</button>
 <button onclick="propose()">💍 Special Surprise</button>
 
@@ -88,14 +88,6 @@ Tu hi meri duniya, tu hi meri mohabbat hai. ❤️
 💍 Rupali, Will You Stay With Me Forever? ❤️👑  
 <br><br>
 I Love You Beyond Infinity 💖✨
-</div>
-
-<!-- YouTube hidden player -->
-<div id="player" style="display:none;">
-<iframe width="0" height="0"
-src="https://www.youtube.com/embed/lhDuj8zYH0I?enablejsapi=1"
-id="ytplayer">
-</iframe>
 </div>
 
 </div>
@@ -106,8 +98,7 @@ document.getElementById("proposal").style.display="block";
 }
 
 function playSong(){
-document.getElementById("player").innerHTML =
-'<iframe width="300" height="170" src="https://www.youtube.com/embed/lhDuj8zYH0I?autoplay=1" allow="autoplay"></iframe>';
+window.open("https://www.youtube.com/watch?v=lhDuj8zYH0I","_blank");
 }
 </script>
 
