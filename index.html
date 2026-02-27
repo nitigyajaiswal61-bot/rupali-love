@@ -3,88 +3,73 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rupali My Forever ❤️</title>
+<title>Rupali My Love ❤️</title>
 
 <style>
 body{
 margin:0;
 padding:0;
 font-family:Segoe UI;
-background:linear-gradient(to top,#0f2027,#203a43,#2c5364);
+background:linear-gradient(to right,#ff758c,#ff7eb3);
 color:white;
 text-align:center;
-overflow:hidden;
-}
-
-/* Stars */
-.star{
-position:absolute;
-width:2px;
-height:2px;
-background:white;
-animation:twinkle 2s infinite alternate;
-}
-@keyframes twinkle{
-from{opacity:0.3;}
-to{opacity:1;}
-}
-
-/* Floating Hearts */
-.heart{
-position:fixed;
-bottom:-10px;
-font-size:20px;
-animation:float 6s linear infinite;
-}
-@keyframes float{
-0%{transform:translateY(0);opacity:1;}
-100%{transform:translateY(-100vh);opacity:0;}
+overflow-x:hidden;
 }
 
 .container{
-position:relative;
-z-index:2;
 padding:20px;
 }
 
 h1{
 font-size:35px;
+margin-top:20px;
 animation:glow 2s infinite alternate;
 }
+
 @keyframes glow{
-from{text-shadow:0 0 10px pink;}
-to{text-shadow:0 0 30px red;}
+from{text-shadow:0 0 10px white;}
+to{text-shadow:0 0 25px yellow;}
 }
 
-/* Photo */
 .photo{
-width:200px;
-height:200px;
+width:180px;
+height:180px;
 margin:20px auto;
 background:url('rupali.jpg') center/cover;
 border-radius:50%;
-border:5px solid pink;
+border:5px solid white;
 }
 
-/* Buttons */
+.shayari{
+background:rgba(255,255,255,0.2);
+margin:15px auto;
+padding:15px;
+border-radius:15px;
+max-width:600px;
+font-size:18px;
+}
+
 button{
 padding:12px 25px;
 font-size:18px;
 border:none;
 border-radius:25px;
 cursor:pointer;
-margin:10px;
+background:white;
+color:#ff4e88;
 font-weight:bold;
+margin-top:20px;
 }
-
-#yes{background:#ff4e88;color:white;}
-#no{background:white;color:#ff4e88;position:absolute;}
 
 #proposal{
 display:none;
-font-size:25px;
+font-size:22px;
 margin-top:20px;
-color:gold;
+color:yellow;
+}
+iframe{
+margin-top:20px;
+border-radius:15px;
 }
 </style>
 </head>
@@ -97,92 +82,48 @@ color:gold;
 
 <div class="photo"></div>
 
-<h2 id="typewriter"></h2>
+<div class="shayari">
+🌹 Rupali, teri muskaan meri pehchaan hai,  
+Teri khushi meri jaan hai,  
+Tere bina adhuri meri zindagi,  
+Tu hi meri duniya, tu hi meri shaan hai. 🌹
+</div>
 
-<button id="yes" onclick="acceptLove()">YES 💍</button>
-<button id="no">NO 😜</button>
+<div class="shayari">
+❤️ Har subah tera naam leta hoon,  
+Har dua me tujhe maangta hoon,  
+Tu mile to lagta hai sab kuch mil gaya,  
+Tere bina khud ko adhoora maanta hoon. ❤️
+</div>
+
+<div class="shayari">
+💕 Teri aankhon me mera sukoon hai,  
+Teri baahon me meri jannat hai,  
+Har janam me bas tu meri rahe. 💕
+</div>
+
+<button onclick="propose()">Click For Special Surprise 💍</button>
 
 <div id="proposal">
-🎆 Yaaaayyyyy!!! 🎆 <br>
-Rupali, You Are Mine Forever ❤️👑 <br>
+💍 Rupali, Will You Stay With Me Forever? ❤️👑  
+<br><br>
 I Love You Beyond Infinity 💖✨
 </div>
+
+<!-- Romantic Song Embed -->
+<h2>🎵 Our Song 🎵</h2>
+
+<iframe width="300" height="170"
+src="https://www.youtube.com/embed/lhDuj8zYH0I?autoplay=1&loop=1&playlist=lhDuj8zYH0I"
+allow="autoplay">
+</iframe>
 
 </div>
 
 <script>
-
-/* Typewriter Effect */
-let text="Rupali, Will You Stay With Me Forever? 💍❤️";
-let i=0;
-function typeEffect(){
-if(i<text.length){
-document.getElementById("typewriter").innerHTML+=text.charAt(i);
-i++;
-setTimeout(typeEffect,80);
-}
-}
-typeEffect();
-
-/* Stars */
-for(let i=0;i<120;i++){
-let star=document.createElement("div");
-star.className="star";
-star.style.top=Math.random()*100+"vh";
-star.style.left=Math.random()*100+"vw";
-star.style.animationDuration=(Math.random()*2+1)+"s";
-document.body.appendChild(star);
-}
-
-/* Floating Hearts */
-setInterval(function(){
-let heart=document.createElement("div");
-heart.className="heart";
-heart.innerHTML="💖";
-heart.style.left=Math.random()*100+"vw";
-heart.style.fontSize=(Math.random()*20+15)+"px";
-document.body.appendChild(heart);
-setTimeout(()=>heart.remove(),6000);
-},500);
-
-/* Running NO Button */
-let noBtn=document.getElementById("no");
-noBtn.addEventListener("mouseover",function(){
-noBtn.style.top=Math.random()*80+"vh";
-noBtn.style.left=Math.random()*80+"vw";
-});
-
-/* YES Click */
-function acceptLove(){
+function propose(){
 document.getElementById("proposal").style.display="block";
-fireworks();
 }
-
-/* Fireworks */
-function fireworks(){
-for(let i=0;i<30;i++){
-let spark=document.createElement("div");
-spark.style.position="absolute";
-spark.style.width="5px";
-spark.style.height="5px";
-spark.style.background="yellow";
-spark.style.top="50%";
-spark.style.left="50%";
-spark.style.borderRadius="50%";
-document.body.appendChild(spark);
-
-let angle=Math.random()*360;
-let distance=Math.random()*200;
-
-spark.animate([
-{transform:"translate(0,0)",opacity:1},
-{transform:`translate(${Math.cos(angle)*distance}px,${Math.sin(angle)*distance}px)`,opacity:0}
-],{duration:1000});
-
-setTimeout(()=>spark.remove(),1000);
-}
-}
-
 </script>
 
 </body>
